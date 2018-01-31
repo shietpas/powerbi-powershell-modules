@@ -279,15 +279,15 @@ Function Get-PBIDashboard{
 	{
 		Write-Verbose "Searching for the dashboard '$name'"		
 		
-		$dashboards = @($dashboards |? name -eq $name)
+		$dashboards = @($dashboards |? displayname -eq $name)
 		
 		if ($dashboards.Count -ne 0)
 		{
-			Write-Verbose "Found dashboard with name: '$name'"				
+			Write-Verbose "Found dashboard with displayname: '$name'"				
 		}
 		else
 		{
-			throw "Cannot find dashboard with name: '$name'"			
+			throw "Cannot find dashboard with displayname: '$name'"			
 		}				
 	}	
 
